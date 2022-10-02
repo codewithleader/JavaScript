@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
-  <script type="text/javascript">
-    console.log('Hello world from HTML');
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Avoid placing scripts directly in the HTML like these: -->
+    <!-- <script type="text/javascript">
+      console.log('Hello world from HTML');
+    </script> -->
+
+    <!-- It is recommended to put the scripts last so that the website loads faster -->
+    <!-- Importing scripts from another javascript file -->
+    <script src="app.js"></script>
+  </body>
 </html>
