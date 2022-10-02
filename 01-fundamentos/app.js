@@ -17,4 +17,9 @@ let a = 10,
   d = 5,
   x = a + b;
 
+// Console types:
+
 console.log(x);
+console.warn(x);
+console.error(x);
+console.info(x);
