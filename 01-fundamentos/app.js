@@ -39,3 +39,6 @@ console.log(`a:`, a, 'b:', b, 'c:', c);
 console.log({ a });
 console.log({ b });
 console.log({ c });
+
+// CSS in the console.log:
+console.log('%c Colors CSS', 'color:blue; font-weight: bold');
