@@ -9,4 +9,4 @@
 
 # Polyfill
 
-Es un código que provee el funcionamiento de una nueva caracteristica de JavaScript (ES6), en versiones vienas como ES5.
+Es un código que provee el funcionamiento de una nueva caracteristica de JavaScript (ES6), en versiones viejas como ES5.
