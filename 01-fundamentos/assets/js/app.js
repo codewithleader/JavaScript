@@ -72,7 +72,7 @@
 let a = 'Hello',
   b = 'World',
   c = 30;
-console.table({ a, b, c });
+// console.table({ a, b, c });
 
 // document
 // document.write('Hello Elis');
