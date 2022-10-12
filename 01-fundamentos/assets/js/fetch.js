@@ -1,5 +1,7 @@
 // Escribe una función que haga una petición a un endpoint que retorna un objeto, y retorne la fecha formateada como string.
 
+// ?: fetch NO FUNCIONA CON NODE OJO! Funciona con liveServer desde script en html
+
 const url = 'https://www.cotalker.com/api/messages/ping';
 
 const data = fetch(url)
