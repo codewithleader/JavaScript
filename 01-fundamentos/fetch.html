@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      async function currentDate() {
+        const url = 'https://www.cotalker.com/api/messages/ping';
+
+        const { time } = await fetch(url)
+          .then(data => {
+            return data.json();
+          })
+          .catch(error => {
+            console.log('There was a problem with the Fetch request:' + error.message);
+          });
+
+        const date = new Date(time);
+
+        const options = {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+        };
+
+        return console.log(date.toLocaleDateString('en-us', options));
+      }
+
+      currentDate();
+    </script>
+  </body>
+</html>
