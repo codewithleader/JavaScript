@@ -80,3 +80,5 @@ let a = 'Hello',
 
 // F5 Run and Debug
 // Open Debug Console: Ctrl+Shift+Y
+
+console.log(window)
