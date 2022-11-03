@@ -37,11 +37,11 @@ console.log(calificacion)
 
 // Pueden tener: letras, numeros, _
 // No pueden iniciar con numero
-var 99dias;
+// var 99dias;
 var dias99;
 
 var _01;
-var 01_;
+// var 01_;
 
 // Estilos para nombrar variables con más de una palabra
 
