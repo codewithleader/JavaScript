@@ -42,7 +42,7 @@ class Person {
 
     // Funciones creadas en este mismo scope:
     function hello() {
-      console.log('Function Hello :-)');
+      console.log('Function Hello creada desde el mismo scope de whoIam');
     }
     // Para llamarla desde este mismo scope es así:
     hello();
@@ -57,32 +57,35 @@ class Person {
   }
 }
 
+// Sub Class Hero
+class Hero extends Person {
+  // Static properties
+
+  // Static Methods
+
+  // Property initialization (Optional: Can be defined in the constructor):
+  clan = 'Sin Clan';
+
+  // Define parameters in the constructor
+  constructor(name, nickname, quote) {
+    super(name, nickname, quote); // Importante: Antes de usar algun "this." en el constructor, se debe llamar al "super".
+    this.clan = 'The Avengers';
+  }
+
+  // Overriding the whoIam method and calling the parent class's whoIam method inside with "super.whoIam();"
+  whoIam() {
+    console.log('Message sub-class Hero');
+
+    // Call Parent method with super
+    super.whoIam();
+  }
+}
 // New instance spiderman
-const spiderman = new Person(
+const spiderman = new Hero(
   'Peter Parker',
   'Spiderman',
   'Remember, with great power comes great responsibility.'
 );
 
-// console.log(spiderman); // Print an object of class Person with the constructor properties
-// spiderman.myQuote(); // Call method myQuote
-
-// Call set
-spiderman.setFavoriteFood = 'Aunt May pie';
 console.log(spiderman);
-
-// Call get
-console.log(spiderman.getFavoriteFood);
-
-/** ******
- * Static
- *********/
-
-// Call Static property
-console.log(Person.count);
-
-// Call Static Methods
-console.log(Person.message());
-
-// You can also create static properties and methods outside the Class
-Person.externalProperty = 'I’m a external property of Person class';
+spiderman.whoIam();
