@@ -3,12 +3,22 @@ class Person {
   name = '';
   nickname = '';
   quote = '';
+  food = '';
 
   // Define parameters in the constructor
   constructor(name = 'No name', nickname = 'No nickname', quote = 'No quote') {
     this.name = name;
     this.nickname = nickname;
     this.quote = quote;
+  }
+
+  // Setters and Getters
+  set setFavoriteFood(food) {
+    this.food = food.toUpperCase();
+  }
+
+  get getFavoriteFood() {
+    return `${this.nickname}’s favorite food is ${this.food}`;
   }
 
   // Methods
@@ -25,7 +35,7 @@ class Person {
 
   myQuote() {
     // Para invocar funciones fuera de este scope pero están dentro de la clase es así:
-    this.whoIam()
+    this.whoIam();
 
     // Imprime la Quote:
     console.log(`${this.nickname} say: ${this.quote}`);
@@ -37,10 +47,16 @@ const spiderman = new Person(
   'Spiderman',
   'Remember, with great power comes great responsibility.'
 );
-console.log(spiderman); // Print an object of class Person with the constructor properties
-spiderman.myQuote(); // Call method myQuote
+// console.log(spiderman); // Print an object of class Person with the constructor properties
+// spiderman.myQuote(); // Call method myQuote
 
-const ironman = new Person('Tony Stark', 'Ironman', 'I’m Ironman');
-console.log(ironman); // Print an object of class Person with the constructor properties
+// const ironman = new Person('Tony Stark', 'Ironman', 'I’m Ironman');
+// console.log(ironman); // Print an object of class Person with the constructor properties
+// ironman.myQuote();
 
-ironman.myQuote();
+// Call set
+spiderman.setFavoriteFood = 'Aunt May pie';
+console.log(spiderman);
+
+// Call get
+console.log(spiderman.getFavoriteFood);
