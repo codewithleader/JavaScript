@@ -1,6 +1,8 @@
 class Person {
   // Static Properties
   static _count = 0;
+
+  // Se puede usar el get count desde la misma clase, no desde una instancia (Person.count)
   static get count() {
     return Person._count + ' instances';
   }
