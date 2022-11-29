@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input name="input1" type="text" class="myClass" />
+      <input name="input2" type="text" class="myClass" />
+      <input name="input3" type="text" class="myClass" />
+      <input name="input4" type="text" class="myClass" />
+      <button type="submit">Enviar</button>
+    </form>
+
+    <!-- Inputs values -->
+    <div id="inputsValues"></div>
+
+    <script>
+      let divInputValues = document.querySelector('#inputsValues');
+      document.querySelector('form').addEventListener('submit', e => {
+        e.preventDefault();
+
+        const { input1, input2, input3, input4 } = Object.fromEntries(new FormData(e.target));
+        console.log([{ input1 }, { input2 }, { input3 }, { input4 }]);
+        const myArray = [{ input1 }, { input2 }, { input3 }, { input4 }];
+
+        divInputValues.innerHTML = '';
+        const preFormat = document.createElement('pre');
+        preFormat.textContent = JSON.stringify(myArray);
+        divInputValues.appendChild(preFormat);
+      });
+
+      document.querySelectorAll('.myClass').forEach(input => {
+        input.addEventListener('keyup', e => {
+          const inputValue = e.target.value;
+
+          const preFormat = document.createElement('pre');
+          preFormat.textContent = JSON.stringify(inputValue);
+          divInputValues.appendChild(preFormat);
+        });
+      });
+    </script>
+  </body>
+</html>
