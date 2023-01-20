@@ -1,11 +1,9 @@
-function regexVar(word) {
+function regexVar() {
   /*
    * Declare a RegExp object variable named 're'
    * It must match a string that starts and ends with the same vowel (i.e., {a, e, i, o, u})
    */
-  console.log(word);
-  const re = word.match(/[aeiou]*[aeiou]/);
-  console.log(re);
+  const re = new RegExp(/^([aeiou]).*\1$/)
 
   /*
    * Do not remove the return statement
@@ -19,5 +17,3 @@ function checkSameVowel(str) {
   return regex.test(str);
 }
 
-
-regexVar('ada');
